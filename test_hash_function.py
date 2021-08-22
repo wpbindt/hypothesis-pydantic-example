@@ -23,6 +23,6 @@ def test_hash_function_is_well_defined(contents):
         things=[Thing(content=content) for content in contents]
     )
     nested_object2 = nested_object.copy(deep=True)
-    nested_object2.things =  nested_object2.things[::-1]
+    nested_object2.things = nested_object2.things[::-1]
 
     assert hash_function(nested_object) == hash_function(nested_object2)
