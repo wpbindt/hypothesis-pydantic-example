@@ -14,5 +14,5 @@ class NestedObject(pydantic.BaseModel):
 
 def hash_function(nested_object: NestedObject) -> str:
     m = hashlib.md5()
-    m.update(nested_object.json())
+    m.update(bytes(nested_object.json(), 'utf-8'))
     return m.hexdigest()
